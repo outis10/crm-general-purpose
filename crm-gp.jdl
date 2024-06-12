@@ -1,0 +1,167 @@
+application {
+  config {
+    baseName crmgp,
+    applicationType monolith,
+    packageName com.otus.crmgp,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    devDatabaseType h2Disk,
+    buildTool gradle,
+    clientFramework react,
+    enableTranslation true,
+    nativeLanguage es,
+    languages [es, en]
+    cacheProvider ehcache
+    testFrameworks [cypress]
+  }
+
+  entities *
+}
+entity User {}
+
+entity Contact {
+  firstName String required minlength(2) maxlength(100),
+  middleName String minlength(2) maxlength(100),
+  lastName String  minlength(2) maxlength(100),
+  email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+  phone String pattern(/^\+?[1-9]\d{1,14}$/),
+  address String,
+  city String,
+  state String,
+  postalCode String pattern(/^\d{5}(-\d{4})?$/),
+  country String,
+  socialMediaProfiles String,
+  notes TextBlob
+}
+
+entity Opportunity {
+  name String required minlength(2) maxlength(100),
+  value BigDecimal required min(0),
+  probability Integer required min(0) max(100),
+  expectedCloseDate LocalDate required,
+  stage OpportunityStage required,
+  description TextBlob,
+  createdAt Instant required,
+  modifiedAt Instant,
+  closedAt Instant
+}
+
+entity Task {
+  name String required minlength(2) maxlength(100),
+  dueAt LocalDate required,
+  completed Boolean,
+  description TextBlob,
+  priority String,
+  assignedAt Instant,
+  completedAt Instant
+}
+
+entity Product {
+  name String required minlength(2) maxlength(100),
+  description String required minlength(10) maxlength(255),
+  price BigDecimal required min(0),
+  stock Integer required min(0),
+  sku String unique,
+  category String,
+  createdAt Instant required,
+  modifiedAt Instant
+}
+
+
+entity Notification {
+  type NotificationType required,
+  message String required minlength(5) maxlength(255),
+  read Boolean,
+  createdAt Instant required,
+  userId Long
+}
+
+entity Quotation {
+  createdAt Instant required,
+  quantity Integer required min(1),
+  unitPrice BigDecimal required min(0),
+  totalPrice BigDecimal required min(0),
+  status QuotationStatus required,
+  expiredAt Instant required,
+  comments String
+}
+
+entity Order {
+  createdAt Instant required,
+  quantity Integer required min(1),
+  unitPrice BigDecimal required min(0),
+  totalPrice BigDecimal required min(0),
+  status OrderStatus required,
+  shippingAt Instant,
+  comments String
+}
+
+entity Invoice {
+  createdAt Instant required,
+  dueAt Instant required,
+  amount BigDecimal required min(0),
+  status InvoiceStatus required,
+  comments String
+}
+
+enum OpportunityStage {
+  PROSPECTING (Prospecting),
+  QUALIFICATION (Qualification),
+  PROPOSAL (Proposal),
+  NEGOTIATION (Negotiation),
+  CLOSED_WON (Won),
+  CLOSED_LOST (Lost)
+}
+
+enum NotificationType {
+  EMAIL (Email),
+  SMS (SMS),
+  IN_APP ("In App"),
+  WHATSUP (Whatsup)
+}
+
+enum QuotationStatus {
+  DRAFT (Draft),
+  SENT (Sent),
+  ACCEPTED (Accepted),
+  REJECTED (Rejected)
+}
+
+enum OrderStatus {
+  PENDING (Pending),
+  PROCESSED (Processed),
+  SHIPPED (Shipped),
+  DELIVERED (Delivered),
+  CANCELLED (Cancelled)
+}
+
+enum InvoiceStatus {
+  PENDING (Pending),
+  PAID(Paid),
+  OVERDUE(Overdue),
+  CANCELLED(Cancelled)
+}
+
+relationship ManyToOne {
+  Opportunity{contact} to Contact
+  Task{opportunity} to Opportunity
+  Notification{user} to User
+  Quotation{opportunity} to Opportunity
+  Quotation{product} to Product
+  Order{opportunity} to Opportunity
+  Order{product} to Product
+  Order{quotation} to Quotation
+  Invoice{order} to Order
+  Task {assignedTo} to User
+}
+
+
+relationship ManyToMany {
+  Contact{task} to Task{contact}
+}
+paginate Contact, Opportunity, Task, Product, Notification, Order, Quotation, Invoice with pagination
+
+service Contact, Opportunity, Task, Product, Notification, Order, Quotation, Invoice with serviceClass
+
+dto Contact, Opportunity, Task, Product, Notification, Order, Quotation, Invoice with mapstruct
+

@@ -1,0 +1,12 @@
+{
+  "crmgpApp": {
+    "OrderStatus": {
+      "null": "",
+      "PENDING": "Pending",
+      "PROCESSED": "Processed",
+      "SHIPPED": "Shipped",
+      "DELIVERED": "Delivered",
+      "CANCELLED": "Cancelled"
+    }
+  }
+}

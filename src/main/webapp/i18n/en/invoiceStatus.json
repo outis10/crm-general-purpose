@@ -1,0 +1,11 @@
+{
+  "crmgpApp": {
+    "InvoiceStatus": {
+      "null": "",
+      "PENDING": "Pending",
+      "PAID": "Paid",
+      "OVERDUE": "Overdue",
+      "CANCELLED": "Cancelled"
+    }
+  }
+}

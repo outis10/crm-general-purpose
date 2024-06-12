@@ -1,0 +1,11 @@
+id;type;message;read;created_at;user_id
+1;EMAIL;above;true;2024-06-12T10:52:32;11222
+2;EMAIL;finally;false;2024-06-11T20:41:17;18390
+3;WHATSUP;hmXXX;true;2024-06-12T02:42:05;16093
+4;WHATSUP;blah against fooey;true;2024-06-11T20:51:34;1296
+5;EMAIL;outgrow;true;2024-06-12T08:59:59;11990
+6;IN_APP;awkwardly;false;2024-06-12T15:39:32;1851
+7;EMAIL;lazily aha;false;2024-06-12T05:38:29;18473
+8;EMAIL;alarmed yet;true;2024-06-12T02:39:12;3458
+9;WHATSUP;lest institute;false;2024-06-12T01:35:21;5831
+10;EMAIL;beside pish trained;true;2024-06-12T01:32:02;27445

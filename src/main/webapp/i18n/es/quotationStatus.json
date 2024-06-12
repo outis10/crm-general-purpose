@@ -1,0 +1,11 @@
+{
+  "crmgpApp": {
+    "QuotationStatus": {
+      "null": "",
+      "DRAFT": "Draft",
+      "SENT": "Sent",
+      "ACCEPTED": "Accepted",
+      "REJECTED": "Rejected"
+    }
+  }
+}

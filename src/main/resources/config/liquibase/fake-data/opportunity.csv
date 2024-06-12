@@ -1,0 +1,11 @@
+id;name;value;probability;expected_close_date;stage;description;created_at;modified_at;closed_at
+1;knowingly;11737.29;77;2024-06-12;PROSPECTING;../fake-data/blob/hipster.txt;2024-06-12T04:34:14;2024-06-11T22:01:39;2024-06-12T07:18:02
+2;better family;26760.83;19;2024-06-12;CLOSED_LOST;../fake-data/blob/hipster.txt;2024-06-11T20:02:59;2024-06-12T18:44:39;2024-06-12T13:28:23
+3;absence;6505.64;26;2024-06-12;CLOSED_LOST;../fake-data/blob/hipster.txt;2024-06-12T04:43:14;2024-06-12T03:06:22;2024-06-11T23:30:23
+4;excluding onto phooey;24718.82;21;2024-06-12;PROPOSAL;../fake-data/blob/hipster.txt;2024-06-12T16:32:30;2024-06-12T04:10:27;2024-06-12T00:49:08
+5;ew;19011.05;13;2024-06-12;CLOSED_WON;../fake-data/blob/hipster.txt;2024-06-12T01:38:39;2024-06-12T08:54:11;2024-06-12T13:42:24
+6;vault psst;3110.28;44;2024-06-12;CLOSED_LOST;../fake-data/blob/hipster.txt;2024-06-12T17:35:05;2024-06-12T00:01:56;2024-06-12T08:19:48
+7;afore;31409.32;15;2024-06-12;CLOSED_WON;../fake-data/blob/hipster.txt;2024-06-12T11:13:48;2024-06-12T18:29:11;2024-06-12T11:21:06
+8;incidentally though joshingly;28216.8;98;2024-06-12;NEGOTIATION;../fake-data/blob/hipster.txt;2024-06-12T07:13:55;2024-06-12T18:43:46;2024-06-12T04:56:29
+9;face whenever gadzooks;31622.31;60;2024-06-12;PROPOSAL;../fake-data/blob/hipster.txt;2024-06-12T19:06:53;2024-06-12T01:22:04;2024-06-12T03:54:47
+10;puma diligently ugh;979.96;41;2024-06-12;QUALIFICATION;../fake-data/blob/hipster.txt;2024-06-12T05:53:04;2024-06-12T08:31:26;2024-06-12T06:05:03

@@ -1,0 +1,23 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "crmgp",
+    "buildTool": "gradle",
+    "cacheProvider": "ehcache",
+    "clientFramework": "react",
+    "devDatabaseType": "h2Disk",
+    "devServerPort": 9060,
+    "enableTranslation": true,
+    "entities": ["User", "Contact", "Opportunity", "Task", "Product", "Notification", "Quotation", "Order", "Invoice"],
+    "jhipsterVersion": "8.5.0",
+    "jwtSecretKey": "ZWU5YzA0YWNlYjg2ZTg1MjQwMjQxN2UzOGNjMTdhYTZmYzcyMjcwZjU2NzViZTBiOGUzM2RmMjZlODY4NzlkYzk0MTlkYzI4OTJmNWRhYWU0MTM5NWNhZGYxZDRiM2YxYTM2YzRlOWQxZmY5MjU0MjkzNjIwZDI3NjM3OTY3Y2U=",
+    "languages": ["es", "en"],
+    "lastLiquibaseTimestamp": 1718221732000,
+    "nativeLanguage": "es",
+    "packageFolder": "com/otus/crmgp",
+    "packageName": "com.otus.crmgp",
+    "prodDatabaseType": "postgresql",
+    "testFrameworks": ["cypress"]
+  }
+}
