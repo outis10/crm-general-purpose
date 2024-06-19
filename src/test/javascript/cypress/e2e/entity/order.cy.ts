@@ -16,7 +16,7 @@ describe('Order e2e test', () => {
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
   const orderSample = {
-    createdAt: '2024-06-12T16:54:16.825Z',
+    createdAt: '2024-06-19T15:25:41.825Z',
     quantity: 7394,
     unitPrice: 32230.38,
     totalPrice: 2136.58,
@@ -168,9 +168,9 @@ describe('Order e2e test', () => {
     });
 
     it('should create an instance of Order', () => {
-      cy.get(`[data-cy="createdAt"]`).type('2024-06-12T19:32');
+      cy.get(`[data-cy="createdAt"]`).type('2024-06-19T18:03');
       cy.get(`[data-cy="createdAt"]`).blur();
-      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-12T19:32');
+      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-19T18:03');
 
       cy.get(`[data-cy="quantity"]`).type('373');
       cy.get(`[data-cy="quantity"]`).should('have.value', '373');
@@ -183,9 +183,9 @@ describe('Order e2e test', () => {
 
       cy.get(`[data-cy="status"]`).select('CANCELLED');
 
-      cy.get(`[data-cy="shippingAt"]`).type('2024-06-12T08:40');
+      cy.get(`[data-cy="shippingAt"]`).type('2024-06-19T07:11');
       cy.get(`[data-cy="shippingAt"]`).blur();
-      cy.get(`[data-cy="shippingAt"]`).should('have.value', '2024-06-12T08:40');
+      cy.get(`[data-cy="shippingAt"]`).should('have.value', '2024-06-19T07:11');
 
       cy.get(`[data-cy="comments"]`).type('hm ancient proportion');
       cy.get(`[data-cy="comments"]`).should('have.value', 'hm ancient proportion');

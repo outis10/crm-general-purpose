@@ -54,8 +54,8 @@ export const OpportunityUpdate = () => {
     if (values.id !== undefined && typeof values.id !== 'number') {
       values.id = Number(values.id);
     }
-    if (values.value !== undefined && typeof values.value !== 'number') {
-      values.value = Number(values.value);
+    if (values.amount !== undefined && typeof values.amount !== 'number') {
+      values.amount = Number(values.amount);
     }
     if (values.probability !== undefined && typeof values.probability !== 'number') {
       values.probability = Number(values.probability);
@@ -131,10 +131,10 @@ export const OpportunityUpdate = () => {
                 }}
               />
               <ValidatedField
-                label={translate('crmgpApp.opportunity.value')}
-                id="opportunity-value"
-                name="value"
-                data-cy="value"
+                label={translate('crmgpApp.opportunity.amount')}
+                id="opportunity-amount"
+                name="amount"
+                data-cy="amount"
                 type="text"
                 validate={{
                   required: { value: true, message: translate('entity.validation.required') },

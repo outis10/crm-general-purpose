@@ -20,7 +20,7 @@ describe('Product e2e test', () => {
     description: 'lestXXXXXX',
     price: 27061.66,
     stock: 21355,
-    createdAt: '2024-06-11T22:43:53.566Z',
+    createdAt: '2024-06-18T21:18:15.566Z',
   };
 
   let product;
@@ -186,13 +186,13 @@ describe('Product e2e test', () => {
       cy.get(`[data-cy="category"]`).type('systematize mockingly');
       cy.get(`[data-cy="category"]`).should('have.value', 'systematize mockingly');
 
-      cy.get(`[data-cy="createdAt"]`).type('2024-06-11T23:41');
+      cy.get(`[data-cy="createdAt"]`).type('2024-06-18T22:15');
       cy.get(`[data-cy="createdAt"]`).blur();
-      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-11T23:41');
+      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-18T22:15');
 
-      cy.get(`[data-cy="modifiedAt"]`).type('2024-06-11T20:51');
+      cy.get(`[data-cy="modifiedAt"]`).type('2024-06-18T19:25');
       cy.get(`[data-cy="modifiedAt"]`).blur();
-      cy.get(`[data-cy="modifiedAt"]`).should('have.value', '2024-06-11T20:51');
+      cy.get(`[data-cy="modifiedAt"]`).should('have.value', '2024-06-18T19:25');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

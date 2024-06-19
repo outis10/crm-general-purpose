@@ -23,7 +23,7 @@ public class OpportunityDTO implements Serializable {
 
     @NotNull
     @DecimalMin(value = "0")
-    private BigDecimal value;
+    private BigDecimal amount;
 
     @NotNull
     @Min(value = 0)
@@ -64,12 +64,12 @@ public class OpportunityDTO implements Serializable {
         this.name = name;
     }
 
-    public BigDecimal getValue() {
-        return value;
+    public BigDecimal getAmount() {
+        return amount;
     }
 
-    public void setValue(BigDecimal value) {
-        this.value = value;
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public Integer getProbability() {
@@ -163,7 +163,7 @@ public class OpportunityDTO implements Serializable {
         return "OpportunityDTO{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
-            ", value=" + getValue() +
+            ", amount=" + getAmount() +
             ", probability=" + getProbability() +
             ", expectedCloseDate='" + getExpectedCloseDate() + "'" +
             ", stage='" + getStage() + "'" +

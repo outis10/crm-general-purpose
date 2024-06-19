@@ -15,7 +15,7 @@ describe('Task e2e test', () => {
   const taskPageUrlPattern = new RegExp('/task(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const taskSample = { name: 'dog', dueAt: '2024-06-11' };
+  const taskSample = { name: 'dog', dueAt: '2024-06-18' };
 
   let task;
 
@@ -165,9 +165,9 @@ describe('Task e2e test', () => {
       cy.get(`[data-cy="name"]`).type('laughter afore');
       cy.get(`[data-cy="name"]`).should('have.value', 'laughter afore');
 
-      cy.get(`[data-cy="dueAt"]`).type('2024-06-12');
+      cy.get(`[data-cy="dueAt"]`).type('2024-06-19');
       cy.get(`[data-cy="dueAt"]`).blur();
-      cy.get(`[data-cy="dueAt"]`).should('have.value', '2024-06-12');
+      cy.get(`[data-cy="dueAt"]`).should('have.value', '2024-06-19');
 
       cy.get(`[data-cy="completed"]`).should('not.be.checked');
       cy.get(`[data-cy="completed"]`).click();
@@ -179,13 +179,13 @@ describe('Task e2e test', () => {
       cy.get(`[data-cy="priority"]`).type('till');
       cy.get(`[data-cy="priority"]`).should('have.value', 'till');
 
-      cy.get(`[data-cy="assignedAt"]`).type('2024-06-12T09:30');
+      cy.get(`[data-cy="assignedAt"]`).type('2024-06-19T08:06');
       cy.get(`[data-cy="assignedAt"]`).blur();
-      cy.get(`[data-cy="assignedAt"]`).should('have.value', '2024-06-12T09:30');
+      cy.get(`[data-cy="assignedAt"]`).should('have.value', '2024-06-19T08:06');
 
-      cy.get(`[data-cy="completedAt"]`).type('2024-06-12T06:29');
+      cy.get(`[data-cy="completedAt"]`).type('2024-06-19T05:04');
       cy.get(`[data-cy="completedAt"]`).blur();
-      cy.get(`[data-cy="completedAt"]`).should('have.value', '2024-06-12T06:29');
+      cy.get(`[data-cy="completedAt"]`).should('have.value', '2024-06-19T05:04');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

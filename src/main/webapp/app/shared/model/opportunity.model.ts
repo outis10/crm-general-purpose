@@ -5,7 +5,7 @@ import { OpportunityStage } from 'app/shared/model/enumerations/opportunity-stag
 export interface IOpportunity {
   id?: number;
   name?: string;
-  value?: number;
+  amount?: number;
   probability?: number;
   expectedCloseDate?: dayjs.Dayjs;
   stage?: keyof typeof OpportunityStage;

@@ -1,3 +1,2 @@
-org.springframework.test.context.ContextCustomizerFactory = com.otus.crmgp.\
-    config.SqlTestContainersSpringContextCustomizerFactory,com.outis.crmgp.\
+org.springframework.test.context.ContextCustomizerFactory = com.outis.crmgp.\
     config.SqlTestContainersSpringContextCustomizerFactory

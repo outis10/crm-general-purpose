@@ -15,7 +15,7 @@ describe('Invoice e2e test', () => {
   const invoicePageUrlPattern = new RegExp('/invoice(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const invoiceSample = { createdAt: '2024-06-12T03:05:12.191Z', dueAt: '2024-06-12T01:31:55.869Z', amount: 15375.53, status: 'OVERDUE' };
+  const invoiceSample = { createdAt: '2024-06-19T01:35:38.191Z', dueAt: '2024-06-19T00:02:21.869Z', amount: 15375.53, status: 'OVERDUE' };
 
   let invoice;
 
@@ -162,13 +162,13 @@ describe('Invoice e2e test', () => {
     });
 
     it('should create an instance of Invoice', () => {
-      cy.get(`[data-cy="createdAt"]`).type('2024-06-11T20:07');
+      cy.get(`[data-cy="createdAt"]`).type('2024-06-18T18:37');
       cy.get(`[data-cy="createdAt"]`).blur();
-      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-11T20:07');
+      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-18T18:37');
 
-      cy.get(`[data-cy="dueAt"]`).type('2024-06-12T05:56');
+      cy.get(`[data-cy="dueAt"]`).type('2024-06-19T04:26');
       cy.get(`[data-cy="dueAt"]`).blur();
-      cy.get(`[data-cy="dueAt"]`).should('have.value', '2024-06-12T05:56');
+      cy.get(`[data-cy="dueAt"]`).should('have.value', '2024-06-19T04:26');
 
       cy.get(`[data-cy="amount"]`).type('26169.8');
       cy.get(`[data-cy="amount"]`).should('have.value', '26169.8');

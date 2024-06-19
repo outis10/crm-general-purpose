@@ -36,7 +36,7 @@ entity Contact {
 
 entity Opportunity {
   name String required minlength(2) maxlength(100),
-  value BigDecimal required min(0),
+  amount BigDecimal required min(0),
   probability Integer required min(0) max(100),
   expectedCloseDate LocalDate required,
   stage OpportunityStage required,

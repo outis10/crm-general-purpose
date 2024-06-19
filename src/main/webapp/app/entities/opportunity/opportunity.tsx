@@ -118,9 +118,9 @@ export const Opportunity = () => {
                   <Translate contentKey="crmgpApp.opportunity.name">Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                 </th>
-                <th className="hand" onClick={sort('value')}>
-                  <Translate contentKey="crmgpApp.opportunity.value">Value</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('value')} />
+                <th className="hand" onClick={sort('amount')}>
+                  <Translate contentKey="crmgpApp.opportunity.amount">Amount</Translate>{' '}
+                  <FontAwesomeIcon icon={getSortIconByFieldName('amount')} />
                 </th>
                 <th className="hand" onClick={sort('probability')}>
                   <Translate contentKey="crmgpApp.opportunity.probability">Probability</Translate>{' '}
@@ -165,7 +165,7 @@ export const Opportunity = () => {
                     </Button>
                   </td>
                   <td>{opportunity.name}</td>
-                  <td>{opportunity.value}</td>
+                  <td>{opportunity.amount}</td>
                   <td>{opportunity.probability}</td>
                   <td>
                     {opportunity.expectedCloseDate ? (

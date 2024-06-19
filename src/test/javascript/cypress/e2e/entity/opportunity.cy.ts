@@ -17,11 +17,11 @@ describe('Opportunity e2e test', () => {
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
   const opportunitySample = {
     name: 'uh-huh',
-    value: 15050.15,
+    amount: 15050.15,
     probability: 19,
-    expectedCloseDate: '2024-06-12',
+    expectedCloseDate: '2024-06-19',
     stage: 'PROSPECTING',
-    createdAt: '2024-06-12T06:54:03.696Z',
+    createdAt: '2024-06-19T05:30:23.696Z',
   };
 
   let opportunity;
@@ -172,32 +172,32 @@ describe('Opportunity e2e test', () => {
       cy.get(`[data-cy="name"]`).type('who');
       cy.get(`[data-cy="name"]`).should('have.value', 'who');
 
-      cy.get(`[data-cy="value"]`).type('1420.2');
-      cy.get(`[data-cy="value"]`).should('have.value', '1420.2');
+      cy.get(`[data-cy="amount"]`).type('1420.2');
+      cy.get(`[data-cy="amount"]`).should('have.value', '1420.2');
 
       cy.get(`[data-cy="probability"]`).type('14');
       cy.get(`[data-cy="probability"]`).should('have.value', '14');
 
-      cy.get(`[data-cy="expectedCloseDate"]`).type('2024-06-11');
+      cy.get(`[data-cy="expectedCloseDate"]`).type('2024-06-18');
       cy.get(`[data-cy="expectedCloseDate"]`).blur();
-      cy.get(`[data-cy="expectedCloseDate"]`).should('have.value', '2024-06-11');
+      cy.get(`[data-cy="expectedCloseDate"]`).should('have.value', '2024-06-18');
 
       cy.get(`[data-cy="stage"]`).select('PROSPECTING');
 
       cy.get(`[data-cy="description"]`).type('../fake-data/blob/hipster.txt');
       cy.get(`[data-cy="description"]`).invoke('val').should('match', new RegExp('../fake-data/blob/hipster.txt'));
 
-      cy.get(`[data-cy="createdAt"]`).type('2024-06-12T12:21');
+      cy.get(`[data-cy="createdAt"]`).type('2024-06-19T10:57');
       cy.get(`[data-cy="createdAt"]`).blur();
-      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-12T12:21');
+      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-19T10:57');
 
-      cy.get(`[data-cy="modifiedAt"]`).type('2024-06-11T22:49');
+      cy.get(`[data-cy="modifiedAt"]`).type('2024-06-18T21:25');
       cy.get(`[data-cy="modifiedAt"]`).blur();
-      cy.get(`[data-cy="modifiedAt"]`).should('have.value', '2024-06-11T22:49');
+      cy.get(`[data-cy="modifiedAt"]`).should('have.value', '2024-06-18T21:25');
 
-      cy.get(`[data-cy="closedAt"]`).type('2024-06-11T22:43');
+      cy.get(`[data-cy="closedAt"]`).type('2024-06-18T21:19');
       cy.get(`[data-cy="closedAt"]`).blur();
-      cy.get(`[data-cy="closedAt"]`).should('have.value', '2024-06-11T22:43');
+      cy.get(`[data-cy="closedAt"]`).should('have.value', '2024-06-18T21:19');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

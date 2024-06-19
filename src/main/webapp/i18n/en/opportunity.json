@@ -19,7 +19,7 @@
       },
       "id": "ID",
       "name": "Name",
-      "value": "Value",
+      "amount": "Amount",
       "probability": "Probability",
       "expectedCloseDate": "Expected Close Date",
       "stage": "Stage",

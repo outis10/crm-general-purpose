@@ -15,7 +15,7 @@ describe('Notification e2e test', () => {
   const notificationPageUrlPattern = new RegExp('/notification(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const notificationSample = { type: 'EMAIL', message: 'untried piercing against', createdAt: '2024-06-12T00:38:41.144Z' };
+  const notificationSample = { type: 'EMAIL', message: 'untried piercing against', createdAt: '2024-06-18T23:12:04.144Z' };
 
   let notification;
 
@@ -171,9 +171,9 @@ describe('Notification e2e test', () => {
       cy.get(`[data-cy="read"]`).click();
       cy.get(`[data-cy="read"]`).should('be.checked');
 
-      cy.get(`[data-cy="createdAt"]`).type('2024-06-12T12:09');
+      cy.get(`[data-cy="createdAt"]`).type('2024-06-19T10:42');
       cy.get(`[data-cy="createdAt"]`).blur();
-      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-12T12:09');
+      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-19T10:42');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

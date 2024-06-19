@@ -1,5 +1,6 @@
 {
   "generator-jhipster": {
+    "applicationIndex": 0,
     "applicationType": "monolith",
     "authenticationType": "jwt",
     "baseName": "crmgp",
@@ -14,11 +15,12 @@
     "jhipsterVersion": "8.5.0",
     "jwtSecretKey": "ZWU5YzA0YWNlYjg2ZTg1MjQwMjQxN2UzOGNjMTdhYTZmYzcyMjcwZjU2NzViZTBiOGUzM2RmMjZlODY4NzlkYzk0MTlkYzI4OTJmNWRhYWU0MTM5NWNhZGYxZDRiM2YxYTM2YzRlOWQxZmY5MjU0MjkzNjIwZDI3NjM3OTY3Y2U=",
     "languages": ["es", "en"],
-    "lastLiquibaseTimestamp": 1718221732000,
+    "lastLiquibaseTimestamp": 1718821158000,
     "nativeLanguage": "es",
     "packageFolder": "com/outis/crmgp",
     "packageName": "com.outis.crmgp",
     "prodDatabaseType": "postgresql",
+    "serverPort": 8080,
     "testFrameworks": ["cypress"]
   }
 }

@@ -16,12 +16,12 @@ describe('Quotation e2e test', () => {
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
   const quotationSample = {
-    createdAt: '2024-06-12T10:58:29.348Z',
+    createdAt: '2024-06-19T09:30:53.348Z',
     quantity: 7080,
     unitPrice: 20455.93,
     totalPrice: 15270.39,
     status: 'ACCEPTED',
-    expiredAt: '2024-06-12T12:18:18.482Z',
+    expiredAt: '2024-06-19T10:50:42.482Z',
   };
 
   let quotation;
@@ -169,9 +169,9 @@ describe('Quotation e2e test', () => {
     });
 
     it('should create an instance of Quotation', () => {
-      cy.get(`[data-cy="createdAt"]`).type('2024-06-12T06:52');
+      cy.get(`[data-cy="createdAt"]`).type('2024-06-19T05:24');
       cy.get(`[data-cy="createdAt"]`).blur();
-      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-12T06:52');
+      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-19T05:24');
 
       cy.get(`[data-cy="quantity"]`).type('31156');
       cy.get(`[data-cy="quantity"]`).should('have.value', '31156');
@@ -184,9 +184,9 @@ describe('Quotation e2e test', () => {
 
       cy.get(`[data-cy="status"]`).select('SENT');
 
-      cy.get(`[data-cy="expiredAt"]`).type('2024-06-12T10:49');
+      cy.get(`[data-cy="expiredAt"]`).type('2024-06-19T09:22');
       cy.get(`[data-cy="expiredAt"]`).blur();
-      cy.get(`[data-cy="expiredAt"]`).should('have.value', '2024-06-12T10:49');
+      cy.get(`[data-cy="expiredAt"]`).should('have.value', '2024-06-19T09:22');
 
       cy.get(`[data-cy="comments"]`).type('zowie casserole kiddingly');
       cy.get(`[data-cy="comments"]`).should('have.value', 'zowie casserole kiddingly');

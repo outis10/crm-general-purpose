@@ -7,31 +7,44 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
-        Added the entity Notification.
+        Added the entity Task.
     -->
-    <changeSet id="20240612194552-1" author="jhipster">
-        <createTable tableName="notification">
+    <changeSet id="20240619181913-1" author="jhipster">
+        <createTable tableName="task">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="type" type="varchar(255)">
+            <column name="name" type="varchar(100)">
                 <constraints nullable="false" />
             </column>
-            <column name="message" type="varchar(255)">
+            <column name="due_at" type="date">
                 <constraints nullable="false" />
             </column>
-            <column name="read" type="boolean">
+            <column name="completed" type="boolean">
                 <constraints nullable="true" />
             </column>
-            <column name="created_at" type="${datetimeType}">
-                <constraints nullable="false" />
+            <column name="description" type="${clobType}">
+                <constraints nullable="true" />
             </column>
-            <column name="user_id" type="bigint">
+            <column name="priority" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assigned_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="completed_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="opportunity_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="assigned_to_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
-        <dropDefaultValue tableName="notification" columnName="created_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="task" columnName="assigned_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="task" columnName="completed_at" columnDataType="${datetimeType}"/>
     </changeSet>
 
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
@@ -44,17 +57,20 @@
           This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
           Spring Boot configuration key.
     -->
-    <changeSet id="20240612194552-1-data" author="jhipster" context="faker">
+    <changeSet id="20240619181913-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/fake-data/notification.csv"
+                  file="config/liquibase/fake-data/task.csv"
                   separator=";"
-                  tableName="notification"
+                  tableName="task"
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
-            <column name="type" type="string"/>
-            <column name="message" type="string"/>
-            <column name="read" type="boolean"/>
-            <column name="created_at" type="date"/>
+            <column name="name" type="string"/>
+            <column name="due_at" type="date"/>
+            <column name="completed" type="boolean"/>
+            <column name="description" type="clob"/>
+            <column name="priority" type="string"/>
+            <column name="assigned_at" type="date"/>
+            <column name="completed_at" type="date"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

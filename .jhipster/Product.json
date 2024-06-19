@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20240612194452"
+    "changelogDate": "20240619181914"
   },
   "applications": ["crmgp"],
   "dto": "mapstruct",

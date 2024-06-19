@@ -35,8 +35,8 @@ public class Opportunity implements Serializable {
 
     @NotNull
     @DecimalMin(value = "0")
-    @Column(name = "value", precision = 21, scale = 2, nullable = false)
-    private BigDecimal value;
+    @Column(name = "amount", precision = 21, scale = 2, nullable = false)
+    private BigDecimal amount;
 
     @NotNull
     @Min(value = 0)
@@ -99,17 +99,17 @@ public class Opportunity implements Serializable {
         this.name = name;
     }
 
-    public BigDecimal getValue() {
-        return this.value;
+    public BigDecimal getAmount() {
+        return this.amount;
     }
 
-    public Opportunity value(BigDecimal value) {
-        this.setValue(value);
+    public Opportunity amount(BigDecimal amount) {
+        this.setAmount(amount);
         return this;
     }
 
-    public void setValue(BigDecimal value) {
-        this.value = value;
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public Integer getProbability() {
@@ -241,7 +241,7 @@ public class Opportunity implements Serializable {
         return "Opportunity{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
-            ", value=" + getValue() +
+            ", amount=" + getAmount() +
             ", probability=" + getProbability() +
             ", expectedCloseDate='" + getExpectedCloseDate() + "'" +
             ", stage='" + getStage() + "'" +

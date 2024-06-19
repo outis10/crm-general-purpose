@@ -39,11 +39,11 @@ export const OpportunityDetail = () => {
           </dt>
           <dd>{opportunityEntity.name}</dd>
           <dt>
-            <span id="value">
-              <Translate contentKey="crmgpApp.opportunity.value">Value</Translate>
+            <span id="amount">
+              <Translate contentKey="crmgpApp.opportunity.amount">Amount</Translate>
             </span>
           </dt>
-          <dd>{opportunityEntity.value}</dd>
+          <dd>{opportunityEntity.amount}</dd>
           <dt>
             <span id="probability">
               <Translate contentKey="crmgpApp.opportunity.probability">Probability</Translate>

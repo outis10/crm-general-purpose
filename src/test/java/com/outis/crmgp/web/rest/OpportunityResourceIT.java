@@ -44,8 +44,8 @@ class OpportunityResourceIT {
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_NAME = "BBBBBBBBBB";
 
-    private static final BigDecimal DEFAULT_VALUE = new BigDecimal(0);
-    private static final BigDecimal UPDATED_VALUE = new BigDecimal(1);
+    private static final BigDecimal DEFAULT_AMOUNT = new BigDecimal(0);
+    private static final BigDecimal UPDATED_AMOUNT = new BigDecimal(1);
 
     private static final Integer DEFAULT_PROBABILITY = 0;
     private static final Integer UPDATED_PROBABILITY = 1;
@@ -102,7 +102,7 @@ class OpportunityResourceIT {
     public static Opportunity createEntity(EntityManager em) {
         Opportunity opportunity = new Opportunity()
             .name(DEFAULT_NAME)
-            .value(DEFAULT_VALUE)
+            .amount(DEFAULT_AMOUNT)
             .probability(DEFAULT_PROBABILITY)
             .expectedCloseDate(DEFAULT_EXPECTED_CLOSE_DATE)
             .stage(DEFAULT_STAGE)
@@ -122,7 +122,7 @@ class OpportunityResourceIT {
     public static Opportunity createUpdatedEntity(EntityManager em) {
         Opportunity opportunity = new Opportunity()
             .name(UPDATED_NAME)
-            .value(UPDATED_VALUE)
+            .amount(UPDATED_AMOUNT)
             .probability(UPDATED_PROBABILITY)
             .expectedCloseDate(UPDATED_EXPECTED_CLOSE_DATE)
             .stage(UPDATED_STAGE)
@@ -207,10 +207,10 @@ class OpportunityResourceIT {
 
     @Test
     @Transactional
-    void checkValueIsRequired() throws Exception {
+    void checkAmountIsRequired() throws Exception {
         long databaseSizeBeforeTest = getRepositoryCount();
         // set the field null
-        opportunity.setValue(null);
+        opportunity.setAmount(null);
 
         // Create the Opportunity, which fails.
         OpportunityDTO opportunityDTO = opportunityMapper.toDto(opportunity);
@@ -303,7 +303,7 @@ class OpportunityResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(opportunity.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
-            .andExpect(jsonPath("$.[*].value").value(hasItem(sameNumber(DEFAULT_VALUE))))
+            .andExpect(jsonPath("$.[*].amount").value(hasItem(sameNumber(DEFAULT_AMOUNT))))
             .andExpect(jsonPath("$.[*].probability").value(hasItem(DEFAULT_PROBABILITY)))
             .andExpect(jsonPath("$.[*].expectedCloseDate").value(hasItem(DEFAULT_EXPECTED_CLOSE_DATE.toString())))
             .andExpect(jsonPath("$.[*].stage").value(hasItem(DEFAULT_STAGE.toString())))
@@ -326,7 +326,7 @@ class OpportunityResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(opportunity.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
-            .andExpect(jsonPath("$.value").value(sameNumber(DEFAULT_VALUE)))
+            .andExpect(jsonPath("$.amount").value(sameNumber(DEFAULT_AMOUNT)))
             .andExpect(jsonPath("$.probability").value(DEFAULT_PROBABILITY))
             .andExpect(jsonPath("$.expectedCloseDate").value(DEFAULT_EXPECTED_CLOSE_DATE.toString()))
             .andExpect(jsonPath("$.stage").value(DEFAULT_STAGE.toString()))
@@ -357,7 +357,7 @@ class OpportunityResourceIT {
         em.detach(updatedOpportunity);
         updatedOpportunity
             .name(UPDATED_NAME)
-            .value(UPDATED_VALUE)
+            .amount(UPDATED_AMOUNT)
             .probability(UPDATED_PROBABILITY)
             .expectedCloseDate(UPDATED_EXPECTED_CLOSE_DATE)
             .stage(UPDATED_STAGE)
@@ -491,7 +491,7 @@ class OpportunityResourceIT {
 
         partialUpdatedOpportunity
             .name(UPDATED_NAME)
-            .value(UPDATED_VALUE)
+            .amount(UPDATED_AMOUNT)
             .probability(UPDATED_PROBABILITY)
             .expectedCloseDate(UPDATED_EXPECTED_CLOSE_DATE)
             .stage(UPDATED_STAGE)

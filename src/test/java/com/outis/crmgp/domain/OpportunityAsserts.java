@@ -49,7 +49,7 @@ public class OpportunityAsserts {
         assertThat(expected)
             .as("Verify Opportunity relevant properties")
             .satisfies(e -> assertThat(e.getName()).as("check name").isEqualTo(actual.getName()))
-            .satisfies(e -> assertThat(e.getValue()).as("check value").usingComparator(bigDecimalCompareTo).isEqualTo(actual.getValue()))
+            .satisfies(e -> assertThat(e.getAmount()).as("check amount").usingComparator(bigDecimalCompareTo).isEqualTo(actual.getAmount()))
             .satisfies(e -> assertThat(e.getProbability()).as("check probability").isEqualTo(actual.getProbability()))
             .satisfies(e -> assertThat(e.getExpectedCloseDate()).as("check expectedCloseDate").isEqualTo(actual.getExpectedCloseDate()))
             .satisfies(e -> assertThat(e.getStage()).as("check stage").isEqualTo(actual.getStage()))
