@@ -2,7 +2,7 @@ application {
   config {
     baseName crmgp,
     applicationType monolith,
-    packageName com.otus.crmgp,
+    packageName com.outis.crmgp,
     authenticationType jwt,
     prodDatabaseType postgresql,
     devDatabaseType h2Disk,
@@ -72,8 +72,7 @@ entity Notification {
   type NotificationType required,
   message String required minlength(5) maxlength(255),
   read Boolean,
-  createdAt Instant required,
-  userId Long
+  createdAt Instant required
 }
 
 entity Quotation {

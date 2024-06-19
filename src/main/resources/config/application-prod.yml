@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     tech.jhipster: INFO
-    com.otus.crmgp: INFO
+    com.outis.crmgp: INFO
 
 management:
   prometheus:

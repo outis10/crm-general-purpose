@@ -29,9 +29,6 @@
             <column name="user_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="user_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="notification" columnName="created_at" columnDataType="${datetimeType}"/>
@@ -58,7 +55,6 @@
             <column name="message" type="string"/>
             <column name="read" type="boolean"/>
             <column name="created_at" type="date"/>
-            <column name="user_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

@@ -6,6 +6,7 @@
     "buildTool": "gradle",
     "cacheProvider": "ehcache",
     "clientFramework": "react",
+    "creationTimestamp": 1718221916535,
     "devDatabaseType": "h2Disk",
     "devServerPort": 9060,
     "enableTranslation": true,
@@ -15,8 +16,8 @@
     "languages": ["es", "en"],
     "lastLiquibaseTimestamp": 1718221732000,
     "nativeLanguage": "es",
-    "packageFolder": "com/otus/crmgp",
-    "packageName": "com.otus.crmgp",
+    "packageFolder": "com/outis/crmgp",
+    "packageName": "com.outis.crmgp",
     "prodDatabaseType": "postgresql",
     "testFrameworks": ["cypress"]
   }

@@ -59,12 +59,6 @@ export const NotificationDetail = () => {
             {notificationEntity.createdAt ? <TextFormat value={notificationEntity.createdAt} type="date" format={APP_DATE_FORMAT} /> : null}
           </dd>
           <dt>
-            <span id="userId">
-              <Translate contentKey="crmgpApp.notification.userId">User Id</Translate>
-            </span>
-          </dt>
-          <dd>{notificationEntity.userId}</dd>
-          <dt>
             <Translate contentKey="crmgpApp.notification.user">User</Translate>
           </dt>
           <dd>{notificationEntity.user ? notificationEntity.user.id : ''}</dd>

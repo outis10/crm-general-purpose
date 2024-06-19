@@ -1,7 +1,7 @@
 sourceSets {
     test {
         java {
-            exclude 'com/otus/crmgp//config/PostgreSqlTestContainer.java'
+            exclude 'com/outis/crmgp//config/PostgreSqlTestContainer.java'
         }
     }
 }

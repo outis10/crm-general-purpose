@@ -55,9 +55,6 @@ export const NotificationUpdate = () => {
       values.id = Number(values.id);
     }
     values.createdAt = convertDateTimeToServer(values.createdAt);
-    if (values.userId !== undefined && typeof values.userId !== 'number') {
-      values.userId = Number(values.userId);
-    }
 
     const entity = {
       ...notificationEntity,
@@ -152,13 +149,6 @@ export const NotificationUpdate = () => {
                 validate={{
                   required: { value: true, message: translate('entity.validation.required') },
                 }}
-              />
-              <ValidatedField
-                label={translate('crmgpApp.notification.userId')}
-                id="notification-userId"
-                name="userId"
-                data-cy="userId"
-                type="text"
               />
               <ValidatedField
                 id="notification-user"

@@ -8,7 +8,6 @@ export interface INotification {
   message?: string;
   read?: boolean | null;
   createdAt?: dayjs.Dayjs;
-  userId?: number | null;
   user?: IUser | null;
 }
 

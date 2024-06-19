@@ -15,7 +15,7 @@ describe('Notification e2e test', () => {
   const notificationPageUrlPattern = new RegExp('/notification(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const notificationSample = { type: 'SMS', message: 'oof portly', createdAt: '2024-06-12T02:35:00.769Z' };
+  const notificationSample = { type: 'EMAIL', message: 'untried piercing against', createdAt: '2024-06-12T00:38:41.144Z' };
 
   let notification;
 
@@ -162,21 +162,18 @@ describe('Notification e2e test', () => {
     });
 
     it('should create an instance of Notification', () => {
-      cy.get(`[data-cy="type"]`).select('SMS');
+      cy.get(`[data-cy="type"]`).select('EMAIL');
 
-      cy.get(`[data-cy="message"]`).type('beetle');
-      cy.get(`[data-cy="message"]`).should('have.value', 'beetle');
+      cy.get(`[data-cy="message"]`).type('till yuck');
+      cy.get(`[data-cy="message"]`).should('have.value', 'till yuck');
 
       cy.get(`[data-cy="read"]`).should('not.be.checked');
       cy.get(`[data-cy="read"]`).click();
       cy.get(`[data-cy="read"]`).should('be.checked');
 
-      cy.get(`[data-cy="createdAt"]`).type('2024-06-12T17:35');
+      cy.get(`[data-cy="createdAt"]`).type('2024-06-12T12:09');
       cy.get(`[data-cy="createdAt"]`).blur();
-      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-12T17:35');
-
-      cy.get(`[data-cy="userId"]`).type('1570');
-      cy.get(`[data-cy="userId"]`).should('have.value', '1570');
+      cy.get(`[data-cy="createdAt"]`).should('have.value', '2024-06-12T12:09');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

@@ -26,10 +26,6 @@
       "fieldName": "createdAt",
       "fieldType": "Instant",
       "fieldValidateRules": ["required"]
-    },
-    {
-      "fieldName": "userId",
-      "fieldType": "Long"
     }
   ],
   "name": "Notification",

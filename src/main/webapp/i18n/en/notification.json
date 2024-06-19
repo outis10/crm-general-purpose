@@ -22,7 +22,6 @@
       "message": "Message",
       "read": "Read",
       "createdAt": "Created At",
-      "userId": "User Id",
       "user": "User"
     }
   }

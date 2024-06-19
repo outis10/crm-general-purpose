@@ -130,10 +130,6 @@ export const Notification = () => {
                   <Translate contentKey="crmgpApp.notification.createdAt">Created At</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('createdAt')} />
                 </th>
-                <th className="hand" onClick={sort('userId')}>
-                  <Translate contentKey="crmgpApp.notification.userId">User Id</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('userId')} />
-                </th>
                 <th>
                   <Translate contentKey="crmgpApp.notification.user">User</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -156,7 +152,6 @@ export const Notification = () => {
                   <td>
                     {notification.createdAt ? <TextFormat type="date" value={notification.createdAt} format={APP_DATE_FORMAT} /> : null}
                   </td>
-                  <td>{notification.userId}</td>
                   <td>{notification.user ? notification.user.id : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
